@@ -6,7 +6,7 @@ export class AnswerQuestionUseCase {
     constructor(private answersRepository: AnswersRepository) {}
 
     async execute({instructorId, questionId, content}: Input) : Promise<Output> {
-        const answer = new Answer({content, questionId, authorId: instructorId});   
+        const answer = new Answer({content, questionId, authorId: instructorId});  
         await this.answersRepository.create(answer);
         return {
             answer: content

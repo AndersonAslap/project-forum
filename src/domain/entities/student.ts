@@ -1,16 +1,7 @@
-import { randomUUID } from "crypto";
+import { Entity } from "../../@shared/entities/entity";
 
 type StudentProps = {
-    id?: string 
     name: string
 }
 
-export class Student {
-    private _id: string;
-    private _name: string;
-
-    constructor(props: StudentProps){
-        this._id = props.id ?? randomUUID();
-        this._name = props.name;
-    }
-}
+export class Student  extends Entity<StudentProps> {}
